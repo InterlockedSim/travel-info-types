@@ -1,4 +1,4 @@
-This project provides TypeScript types for the real-time travel information that is provided by the Dutch railway operator NS.
+This project provides TypeScript types for the real-time _InfoPlus_ travel information that is provided by the Dutch railway operator NS.
 
 ## Background
 

@@ -8,3 +8,4 @@ export * from './vi-trb';
 export * from './vtb-lab';
 export * from './vtb-stb';
 export * from './vtb-trb';
+export * from './parsing';
