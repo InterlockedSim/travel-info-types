@@ -53,12 +53,11 @@ export type situatieTijdvak = {
     geheleTekst?: geheleTekst;
 };
 
-export type stationPublicatie = {
-    landelijkPublicatie: landelijkPublicatie;
+export type stationPublicatie = landelijkPublicatie & {
     publicatieStation: station;
 };
 
-export type treinseriePublicatie = {
+export type treinseriePublicatie = landelijkPublicatie & {
     landelijkPublicatie: landelijkPublicatie;
     /** De treinserie waarvoor het bericht bestemd is. */
     publicatieTreinserie: treinserie;
@@ -127,7 +126,8 @@ export type verstoringStationImpact = {
     omreisAdviezenPerRoute?: omreisAdviesRoute[];
 };
 
-export type verstoringTreinserieStation = treinserieStation & verstoringStationImpact;
+export type verstoringTreinserieStation = treinserieStation &
+    verstoringStationImpact;
 
 export type vrijeTekstEigenschappen = {
     categorie: categorie;
@@ -311,8 +311,7 @@ export type omschrijving = {
     presentatie: presentatie;
 };
 
-export type periode = {
-    interval: interval;
+export type periode = interval & {
     presentatie: presentatie;
 };
 
@@ -432,7 +431,10 @@ export type vrijeTekstSituatieTijdvak = {
  * Start publicatie is het eerste bericht uit een reeks, einde publicatie is het laatste bericht uit
  * een reeks, update publicatie is een tussenliggend bericht uit een reeks.
  */
-export type publicatieType = 'START_PUBLICATIE' | 'UPDATE_PUBLICATIE' | 'EINDE_PUBLICATIE';
+export type publicatieType =
+    | 'START_PUBLICATIE'
+    | 'UPDATE_PUBLICATIE'
+    | 'EINDE_PUBLICATIE';
 
 export type richting = 'HEEN' | 'BEIDE';
 
