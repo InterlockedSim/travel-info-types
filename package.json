@@ -1,0 +1,33 @@
+{
+    "name": "travel-info-types",
+    "version": "1.0.0",
+    "description": "Types for Dutch rail travel information.",
+    "keywords": [
+        "typescript",
+        "types",
+        "travel-info",
+        "dvs"
+    ],
+    "homepage": "https://github.com/InterlockedSim/travel-info-types#readme",
+    "bugs": {
+        "url": "https://github.com/InterlockedSim/travel-info-types/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/InterlockedSim/travel-info-types.git"
+    },
+    "license": "CC0-1.0",
+    "author": "Interlocked",
+    "type": "module",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "prettier": "^3.7.2",
+        "typescript": "^5.9.3"
+    }
+}
