@@ -8,8 +8,8 @@ import {
 } from './common-vi';
 
 /**
- * Treinseriebericht voor een vrije tekst. De combinatie van dossiernummer, publicatievolgnummer en
- * treinserie is uniek.
+ * Treinseriebericht voor een vrije tekst. De combinatie van dossiernummer,
+ * publicatievolgnummer en treinserie is uniek.
  */
 export type vrijeTekstTreinserieBericht = treinseriePublicatie &
     vrijeTekstEigenschappen &

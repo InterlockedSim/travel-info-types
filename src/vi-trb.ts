@@ -8,8 +8,8 @@ import {
 } from './common-vi';
 
 /**
- * Treinseriebericht voor een ernstige verstoring of geplande wijziging. De combinatie van
- * dossiernummer, publicatievolgnummer en treinserie is uniek.
+ * Treinseriebericht voor een ernstige verstoring of geplande wijziging. De
+ * combinatie van dossiernummer, publicatievolgnummer en treinserie is uniek.
  */
 export type verstoringTreinserieBericht = treinseriePublicatie &
     verstoringEigenschappen &

@@ -1,10 +1,11 @@
 import { ReisInformatieProductDVS } from './dvs';
+import { ReisInformatieProductRitInfo } from './rit';
+import { verstoringLandelijkBericht } from './vi-lab';
 import { verstoringStationBericht } from './vi-stb';
 import { verstoringTreinserieBericht } from './vi-trb';
 import { vrijeTekstLandelijkBericht } from './vtb-lab';
 import { vrijeTekstStationBericht } from './vtb-stb';
 import { vrijeTekstTreinserieBericht } from './vtb-trb';
-import { verstoringLandelijkBericht } from './vi-lab';
 
 export type ReisInformatieBoodschap<T = MessageMap> = {
     PutReisInformatieBoodschapIn: T extends MessageMap
@@ -24,6 +25,7 @@ type KeyOfValue<V> = {
 
 type MessageMap = {
     ReisInformatieProductDVS: ReisInformatieProductDVS;
+    ReisInformatieProductRitInfo: ReisInformatieProductRitInfo;
     VerstoringLandelijkBericht: verstoringLandelijkBericht;
     VerstoringStationBericht: verstoringStationBericht;
     VerstoringTreinserieBericht: verstoringTreinserieBericht;

@@ -8,8 +8,8 @@ import {
 } from './common-vi';
 
 /**
- * Stationsbericht voor een ernstige verstoring of geplande wijziging. De combinatie van
- * dossiernummer, publicatievolgnummer en station is uniek.
+ * Stationsbericht voor een ernstige verstoring of geplande wijziging. De
+ * combinatie van dossiernummer, publicatievolgnummer en station is uniek.
  */
 export type verstoringStationBericht = stationPublicatie &
     verstoringEigenschappen &

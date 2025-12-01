@@ -1,6 +1,8 @@
+export * as CommonV4 from './common-v4';
+export * as CommonV5 from './common-v5';
 export * from './common-vi';
-export * from './common';
 export * from './dvs';
+export * from './parsing';
 export * from './rib';
 export * from './vi-lab';
 export * from './vi-stb';
@@ -8,4 +10,3 @@ export * from './vi-trb';
 export * from './vtb-lab';
 export * from './vtb-stb';
 export * from './vtb-trb';
-export * from './parsing';

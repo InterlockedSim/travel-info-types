@@ -2,20 +2,24 @@
 
 /** Een alternatief vervoermiddel omdat de trein vanwege de beperking niet rijdt. */
 export type alternatiefVervoerMaatregel = {
-    /** Uniek ID binnen bericht. Blijft gelijk bij aanpassingen in opvolgende berichten. */
+    /**
+     * Uniek ID binnen bericht. Blijft gelijk bij aanpassingen in opvolgende
+     * berichten.
+     */
     id: string;
     /** Een omschrijving van het type vervoermiddel. */
     omschrijving: omschrijving;
     /** De trajecten waarvoor het vervoermiddel een alternatief biedt. */
     trajecten: traject[];
     /**
-     * Heen: het vervoermiddel rijdt in de richting van de stops. Beide: het vervoermiddel rijdt in
-     * beide richtingen.
+     * Heen: het vervoermiddel rijdt in de richting van de stops. Beide: het
+     * vervoermiddel rijdt in beide richtingen.
      */
     richting: richting;
     /**
-     * Mogelijk toegevoegde of verwijderde stations die onderdeel zijn van de tijdelijke aanpassing.
-     * Bijvoorbeeld: omgeleid via Hilversum en Hilversum Sportpark.
+     * Mogelijk toegevoegde of verwijderde stations die onderdeel zijn van de
+     * tijdelijke aanpassing. Bijvoorbeeld: omgeleid via Hilversum en Hilversum
+     * Sportpark.
      */
     stops: alternatiefVervoerStop[];
     presentatie: presentatie;
@@ -43,12 +47,15 @@ export type landelijkPublicatie = {
 };
 
 /**
- * Geeft de situatie weer in een tijdsperiode van begintijdstip tot eindtijdstip. Het eindtijdstip
- * is exclusief.
+ * Geeft de situatie weer in een tijdsperiode van begintijdstip tot
+ * eindtijdstip. Het eindtijdstip is exclusief.
  */
 export type situatieTijdvak = {
     interval: interval;
-    /** Uniek ID binnen bericht. Blijft gelijk bij aanpassingen in opvolgende berichten. */
+    /**
+     * Uniek ID binnen bericht. Blijft gelijk bij aanpassingen in opvolgende
+     * berichten.
+     */
     id: string;
     geheleTekst?: geheleTekst;
 };
@@ -70,9 +77,15 @@ export type treinserieStation = {
     omroepTekst?: omroep;
 };
 
-/** Een tijdelijke aanpassing van de dienstregeling voor een of meerdere treinseries. */
+/**
+ * Een tijdelijke aanpassing van de dienstregeling voor een of meerdere
+ * treinseries.
+ */
 export type treinMaatregel = {
-    /** Uniek ID binnen bericht. Blijft gelijk bij aanpassingen in opvolgende berichten. */
+    /**
+     * Uniek ID binnen bericht. Blijft gelijk bij aanpassingen in opvolgende
+     * berichten.
+     */
     id: string;
     /** Een omschrijving van de tijdelijke aanpassing. */
     omschrijving: omschrijving;
@@ -81,14 +94,15 @@ export type treinMaatregel = {
     /** Het station tot waar de tijdelijke aanpassing geldt. */
     totStation: station;
     /**
-     * Heen: de tijdelijke aanpassing loopt van de van-stations naar de tot-stations. Beide: de
-     * tijdelijke aanpassing loopt in beide richtingen.
+     * Heen: de tijdelijke aanpassing loopt van de van-stations naar de
+     * tot-stations. Beide: de tijdelijke aanpassing loopt in beide richtingen.
      */
     richting: richting;
     treinseries?: treinserie[];
     /**
-     * Mogelijk toegevoegde of verwijderde stations die onderdeel zijn van de tijdelijke aanpassing.
-     * Bijvoorbeeld: omgeleid via Hilversum en Hilversum Sportpark.
+     * Mogelijk toegevoegde of verwijderde stations die onderdeel zijn van de
+     * tijdelijke aanpassing. Bijvoorbeeld: omgeleid via Hilversum en Hilversum
+     * Sportpark.
      */
     maatregelStations?: station[];
     presentatie: presentatie;
@@ -109,7 +123,10 @@ export type verstoringMomentopname = {
 };
 
 export type verstoringSituatie = {
-    /** Laagste impact is 1 (vertraging), hoogste impact is 5 (strategisch punt getroffen). */
+    /**
+     * Laagste impact is 1 (vertraging), hoogste impact is 5 (strategisch punt
+     * getroffen).
+     */
     impact: omschrijving;
     oorzaak: omschrijving;
     baanvakBeperkingen: baanvakBeperking[];
@@ -145,7 +162,10 @@ export type vrijeTekstMomentopname = {
 };
 
 export type vrijeTekstSituatie = {
-    /** Laagste impact is 1 (klein incident), hoogste impact is 5 (landelijk incident). */
+    /**
+     * Laagste impact is 1 (klein incident), hoogste impact is 5 (landelijk
+     * incident).
+     */
     impact?: omschrijving;
 };
 
@@ -178,13 +198,13 @@ export type alternatiefVervoerStop = {
 export type baanvakBeperking = {
     vanStation: station;
     /**
-     * Indien het tot-station ontbreekt dan zijn de baanvakken tussen het van-station en de
-     * aanpalende stations uit de trajecten beperkt.
+     * Indien het tot-station ontbreekt dan zijn de baanvakken tussen het
+     * van-station en de aanpalende stations uit de trajecten beperkt.
      */
     totStation?: station;
     /**
-     * Heen: de beperking loopt van het van-station naar het tot-station. Beide: de beperking loopt
-     * in beide richtingen.
+     * Heen: de beperking loopt van het van-station naar het tot-station. Beide:
+     * de beperking loopt in beide richtingen.
      */
     richting: richting;
     /** De gevolgen van de beperking op de treindienst. */
@@ -194,12 +214,16 @@ export type baanvakBeperking = {
     /** De relevante trajecten over de beperking. */
     trajecten: traject[];
     /**
-     * Informatie over de stations waartussen de beperking aanwezig is. Indien richting "BEIDE" dan
-     * zijn er twee beperkingen. Indien het tot-station ontbreekt dan is iedere combinatie van een
-     * aanpalend station uit de trajecten met het van-station een beperking.
+     * Informatie over de stations waartussen de beperking aanwezig is. Indien
+     * richting "BEIDE" dan zijn er twee beperkingen. Indien het tot-station
+     * ontbreekt dan is iedere combinatie van een aanpalend station uit de
+     * trajecten met het van-station een beperking.
      */
     beperkingen: beperking[];
-    /** Samenvatting van de alternatiefvervoermaatregelen die langs een van de trajecten lopen. */
+    /**
+     * Samenvatting van de alternatiefvervoermaatregelen die langs een van de
+     * trajecten lopen.
+     */
     alternatiefVervoerMaatregelenSamenvatting?: omschrijving;
     presentatie: presentatie;
 };
@@ -208,9 +232,15 @@ export type beperkingStation = {
     stationCode: string;
 };
 
-/** Aaneengesloten stations waartussen een beperking loopt in een enkele richting. */
+/**
+ * Aaneengesloten stations waartussen een beperking loopt in een enkele
+ * richting.
+ */
 export type beperking = {
-    /** De volgorde van de stations komt overeen met de richting van de beperking. */
+    /**
+     * De volgorde van de stations komt overeen met de richting van de
+     * beperking.
+     */
     stations: beperkingStation[];
 };
 
@@ -270,8 +300,8 @@ export type landelijkOmreisAdviezen = {
     /** De geadviseerde stations om over te reizen. */
     adviesStations: station[];
     /**
-     * Heen: de reizigersstroom loopt van de van-stations naar de tot-stations. Beide: de
-     * reizigersstroom loopt in beide richtingen.
+     * Heen: de reizigersstroom loopt van de van-stations naar de tot-stations.
+     * Beide: de reizigersstroom loopt in beide richtingen.
      */
     richting: richting;
     /** De verwachte extra reistijd als gevolg van de beperking. */
@@ -299,8 +329,8 @@ export type omreisAdviesRoute = {
 };
 
 /**
- * Geredigeerde tekst specifiek bedoeld voor omroepsystemen. Inclusief uitspraakregels
- * (bijvoorbeeld: pauze-elementen).
+ * Geredigeerde tekst specifiek bedoeld voor omroepsystemen. Inclusief
+ * uitspraakregels (bijvoorbeeld: pauze-elementen).
  */
 export type omroep = {
     tekstenPerTaal: presentatieTekstInTaal[];
@@ -389,8 +419,9 @@ export type treinserieRoute = {
 export type treinserieStations = treinserieStation;
 
 /**
- * Een groepering van treinen, individueel aangeduid met een treinnummer, die op basis van een
- * gezamenlijk patroon worden gepland. De combinatie van serienummer en richting is uniek.
+ * Een groepering van treinen, individueel aangeduid met een treinnummer, die op
+ * basis van een gezamenlijk patroon worden gepland. De combinatie van
+ * serienummer en richting is uniek.
  */
 export type treinserie = {
     /** Serienummer. */
@@ -428,8 +459,9 @@ export type vrijeTekstSituatieTijdvak = {
 };
 
 /**
- * Start publicatie is het eerste bericht uit een reeks, einde publicatie is het laatste bericht uit
- * een reeks, update publicatie is een tussenliggend bericht uit een reeks.
+ * Start publicatie is het eerste bericht uit een reeks, einde publicatie is het
+ * laatste bericht uit een reeks, update publicatie is een tussenliggend bericht
+ * uit een reeks.
  */
 export type publicatieType =
     | 'START_PUBLICATIE'
@@ -452,8 +484,9 @@ export type stationType =
 export type taalCode = 'nl' | 'en' | 'de' | 'fr';
 
 /**
- * NL: binnenlands vervoer, BUURLAND: regionaal grensoverschrijdend vervoer, HSL: hogesnelheid
- * binnenlands vervoer, INTERNATIONAAL: hogesnelheid grensoverschrijdend vervoer.
+ * NL: binnenlands vervoer, BUURLAND: regionaal grensoverschrijdend vervoer,
+ * HSL: hogesnelheid binnenlands vervoer, INTERNATIONAAL: hogesnelheid
+ * grensoverschrijdend vervoer.
  */
 export type trajectType = 'NL' | 'BUURLAND' | 'HSL' | 'INTERNATIONAAL';
 
@@ -463,8 +496,9 @@ export type trajectLigging = 'VOLLEDIG_NL' | 'DEELS_NL' | 'NIET_NL';
 export type treinserieRichting = 'EVEN' | 'ONEVEN';
 
 /**
- * 1A: situatie onduidelijk, 1B: situatie duidelijk, 2: treinmaatregelen toegevoegd, 3:
- * alternatiefvervoermaatregel toegevoegd, 4: treindienst opgestart, 5: treindienst hersteld.
+ * 1A: situatie onduidelijk, 1B: situatie duidelijk, 2: treinmaatregelen
+ * toegevoegd, 3: alternatiefvervoermaatregel toegevoegd, 4: treindienst
+ * opgestart, 5: treindienst hersteld.
  */
 export type verstoringFase = '1A' | '1B' | '2' | '3' | '4' | '5';
 

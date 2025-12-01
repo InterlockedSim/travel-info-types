@@ -1,9 +1,20 @@
-/** A list of fields that should always be parsed as arrays, even if there's only one item. */
+/**
+ * A list of fields that should always be parsed as arrays, even if there's only
+ * one item.
+ */
 export const arrayFields = [
+    'AankomstTijd',
     'Code',
+    'InstapHalteplaats',
     'InstapTip',
+    'InstapTipVertrekSpoor',
+    'LogischeRit',
+    'LogischeRitDeel',
+    'LogischeRitDeelStation',
+    'MaterieelDeel',
     'MaterieelDeelDVS',
     'MaterieelDeelEindBestemming',
+    'MaterieelWijziging',
     'OverstapTip',
     'PresentatieOverstapTip',
     'PresentatieTreinEindBestemming',
@@ -12,8 +23,10 @@ export const arrayFields = [
     'SpoorVak',
     'Station',
     'StopStations',
+    'Stopt',
     'TaalCode',
     'TaalCodes',
+    'TreinAankomstSpoor',
     'TreinEindBestemming',
     'TreinVertrekSpoor',
     'TreinVleugel',
@@ -21,6 +34,7 @@ export const arrayFields = [
     'TreinVleugelVertrekSpoor',
     'Uiting',
     'Uitingen',
+    'UitstapHalteplaats',
     'VerkorteRoute',
     'VertrekInformatie',
     'VertrekTijd',
